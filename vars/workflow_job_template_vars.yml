@@ -1,0 +1,33 @@
+---
+
+# NOTE: 'controller_workflows' is used in 'redhat_cop.controller_configuration'
+controller_workflows:
+
+  - name: Simple Workflow Job Template
+    description: a basic workflow
+    inventory:
+    limit:
+    scm_branch:
+    organization: Default
+    schedules: []
+    simplified_workflow_nodes:
+      - all_parents_must_converge: false
+        identifier: node_1
+        unified_job_template: First Job Template
+        credentials: []
+        success_nodes:
+          - node_2
+        failure_nodes: []
+        always_nodes: []
+      - identifier: node_2
+        approval_node:
+          name: Simple Approval Node
+          description: Approve this to proceed in workflow
+          timeout: 900 # 15 minutes
+      - all_parents_must_converge: false
+        identifier: node_3
+        unified_job_template: Second Job Template
+        credentials: []
+        success_nodes: []
+        failure_nodes: []
+        always_nodes: []

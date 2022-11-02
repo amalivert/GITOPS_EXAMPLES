@@ -1,0 +1,12 @@
+---
+
+# NOTE: 'controller_templates' is used in 'redhat_cop.controller_configuration'
+controller_templates:
+
+  - name: Simple Job Template
+    job_type: run
+    inventory: Demo Inventory
+    project: Demo Project
+    playbook: demoplaybook.yml
+    credentials:
+      - Demo Credential
