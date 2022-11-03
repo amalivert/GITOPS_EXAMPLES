@@ -9,4 +9,4 @@ controller_templates:
     project: Demo Project
     playbook: job_template.yml
     credentials:
-      - Demo Credential
+      - admin_credential
